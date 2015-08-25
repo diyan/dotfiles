@@ -2,7 +2,8 @@
     links = [
         [".vimrc"],
         [".zshrc"],
-        [".atom/init.coffee"],
+	[".gitconfig"],
+	[".atom/init.coffee"],
         [".atom/styles.less"],
         [".config/i3/config"],
         [".config/i3status/config"],
