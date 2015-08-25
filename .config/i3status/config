@@ -1,0 +1,74 @@
+general {
+        colors = true
+        interval = 5
+}
+
+order += "cpu_usage"
+order += "load"
+//order += "ipv6"
+//order += "disk /"
+//order += "run_watch DHCP"
+order += "run_watch VPN"
+order += "wireless wlp2s0"
+order += "ethernet eth0"
+order += "battery 0"
+order += "volume master"
+order += "time"
+
+//ipv6 {
+//    format_up = " IPv6 %ip "
+//    format_down = " IPv6 no "
+//}
+
+//disk "/" {
+    // format = "root - %free (%percentage_used busy, %percentage_free free)"
+//}
+
+wireless wlp2s0 {
+    format_up = " WLAN %quality"
+    format_down = " WLAN down "
+}
+
+ethernet eth0 {
+    # if you use %speed, i3status requires root privileges
+    format_up = " LAN %ip (%speed) "
+    format_down = " LAN no "
+}
+
+battery 0 {
+    format = " Batt %status %percentage %remaining "
+}
+
+//run_watch DHCP {
+//    pidfile = "/var/run/dhclient*.pid"
+//    format = " %title %status "
+//}
+
+run_watch VPN {
+    pidfile = "/var/run/ppp0.pid"
+    format = " %title %status "
+}
+
+time {
+    format = " %a, %d %b  %H:%M "
+}
+
+cpu_usage {
+    format = " CPU %usage "
+}
+
+load {
+    //format = " Load %1min %5min %15min "
+    format = " Load %1min "
+}
+
+disk "/" {
+    format = " %free "
+}
+
+volume master {
+    format = " Vol %volume "
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+}
