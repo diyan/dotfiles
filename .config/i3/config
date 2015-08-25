@@ -34,10 +34,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec rofi -show run -font 'Droid Sans Mono 20' -lines 7 -width 600 -bw 4 -bc #4c7899 -opacity 95%
-#bindsym $mod+d exec kupfer
+# start rofi, a dmenu-like program launcher
+bindsym $mod+d exec rofi_run
 
 # change focus
 bindsym $mod+j focus left

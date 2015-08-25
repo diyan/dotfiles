@@ -3,6 +3,7 @@
         [".vimrc"],
         [".zshrc"],
 	[".gitconfig"],
+	[".local/bin/rofi_run"],
 	[".atom/init.coffee"],
         [".atom/styles.less"],
         [".config/i3/config"],
