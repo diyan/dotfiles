@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 
-# TODO if falcon hostname - run below; else run with smaller fonts
-rofi -show run -font 'Droid Sans Mono 20' -lines 7 -width 600 -bw 4 -bc #4c7899 -opacity 95%
+if [ "$(hostname)" == "falcon" ]; then
+    rofi -show run -font 'Droid Sans Mono 20' -lines 7 -width 600 -bw 4 -bc #4c7899 -opacity 95%
+else
+    rofi -show run -font 'Droid Sans Mono 15' -lines 7 -width 600 -bw 2 -bc #4c7899 -opacity 95%
+fi
