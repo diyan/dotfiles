@@ -28,6 +28,8 @@ Plug 'vim-scripts/IndexedSearch'
 
 Plug 'mattn/emmet-vim'
 
+Plug 'mhinz/vim-startify'
+
 " UltiSnips supports nested placeholders, tabstops and outperforms snipMate
 " in several other cases. Needs Python 2.6+ or 3
 "Plug 'vim-scripts/UltiSnips'
@@ -163,6 +165,7 @@ Plug 'nanotech/jellybeans.vim'
 
 " TODO Double check this is the best for Golang
 Plug 'fatih/molokai'
+Plug 'morhetz/gruvbox'
 
 " All of your Plugins must be declared before the following line
 call plug#end()
@@ -388,7 +391,9 @@ endif
 
 " JellyBeans theme
 "let g:jellybeans_background_color = "080808" " 151515 by default
-colorscheme jellybeans
+"colorscheme jellybeans
+colorscheme gruvbox
+set background=dark
 "colorscheme molokai
 "let g:rehash256 = 1
 "let g:molokai_original = 1
