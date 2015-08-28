@@ -61,7 +61,7 @@ Plug 'scrooloose/syntastic'
 
 " Nice status/tabline inspired on powerline but without fancy chars
 " TODO show trailing whitespace error in status line
-Plug 'itchyny/lightline.vim'  
+Plug 'itchyny/lightline.vim' 
 
 " Treesome allows conflict resolution using tree-way merge. Needs Python 2.5+
 Plug 'sjl/splice.vim'
@@ -109,7 +109,7 @@ Plug 'tpope/vim-sensible'
 " Plugins. Movements
 " ------------------
 " Jumps to any location specified by two characters
-Plug 'justinmk/vim-sneak'
+"Plug 'justinmk/vim-sneak'
 
 " --------------------
 " Code display plugins
@@ -151,6 +151,9 @@ Plug 'ekalinin/Dockerfile.vim'
 " Go language. Integrates gocode, gofmt, godef, godoc, goimports, golint, etc
 " TODO run :GoInstallBinaries in post update hook
 Plug 'fatih/vim-go', { 'for': 'go' }
+
+Plug 'cespare/vim-toml'
+
 
 " Wisely add closing 'fi/esac/done' in Bash, Ruby, VimL, VB, Lua
 Plug 'tpope/vim-endwise'
