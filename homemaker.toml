@@ -4,6 +4,8 @@
         [".zshrc"],
 	[".gitconfig"],
 	[".local/bin/rofi_run"],
+	[".local/bin/skype_at_home"],
+	[".local/bin/skype_at_devpro"],
 	[".atom/init.coffee"],
         [".atom/styles.less"],
         [".config/i3/config"],

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Skype sometimes is just hangs - this script does a fix
+
+# killall -9 skype ;
+# skype --dbpath=~/.config/skype/dev-pro.alexey.diyan & ;
+# skype --dbpath=~/.config/skype/alexey.diyan
+
+CMD="skype --dbpath=~/.config/skype/dev-pro.alexey.diyan"
+kill $(ps ax -o pid,command | grep "$CMD" | awk "{print $1}")
+sleep 3
+eval "$CMD"
+
+# TODO script works only in following way:
+# 1-st run kill but not restart
+# 2-nd run start new Skype
+# TODO consider use sleep, consider use kill -9
+
