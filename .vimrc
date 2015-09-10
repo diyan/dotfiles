@@ -163,6 +163,8 @@ Plug 'mustache/vim-mustache-handlebars'
 " Highlight syntax in markdown code block
 Plug 'joker1007/vim-markdown-quote-syntax'
 
+Plug 'chase/vim-ansible-yaml'
+
 " ----------------------
 " Plugins. Color schemes
 " ----------------------
