@@ -211,6 +211,10 @@ au BufWinEnter * silent! loadview
 " ------------------
 " Interface settings
 " ------------------
+" Hybrid line number mode
+" http://jeffkreeftmeijer.com/2013/vims-new-hybrid-line-number-mode/
+set relativenumber
+set number
 " set nonumber " Do not show line numbers. Line numbers are always shown in
              " status line; moreover ':N' command allows quckly navigate
              " into specified line
