@@ -61,13 +61,10 @@ Plug 'scrooloose/syntastic'
 
 " Nice status/tabline inspired on powerline but without fancy chars
 " TODO show trailing whitespace error in status line
-Plug 'itchyny/lightline.vim' 
+Plug 'itchyny/lightline.vim'
 
 " Treesome allows conflict resolution using tree-way merge. Needs Python 2.5+
 Plug 'sjl/splice.vim'
-
-"TODO: evaluate this plugin
-Plug 'leshill/vim-json'
 
 Plug 'tpope/vim-fugitive'
 Plug 'gregsexton/gitv'
@@ -152,18 +149,22 @@ Plug 'ekalinin/Dockerfile.vim'
 " TODO run :GoInstallBinaries in post update hook
 Plug 'fatih/vim-go', { 'for': 'go' }
 
-Plug 'cespare/vim-toml'
-
-
 " Wisely add closing 'fi/esac/done' in Bash, Ruby, VimL, VB, Lua
 Plug 'tpope/vim-endwise'
+
+" Different colors for attrbutes and values, folding, syntax warnings.
+" JSON, CSON and JSONP are supported
+Plug 'elzr/vim-json'
 
 Plug 'mustache/vim-mustache-handlebars'
 
 " Highlight syntax in markdown code block
 Plug 'joker1007/vim-markdown-quote-syntax'
 
+" Highlight syntax and fix indentation for Ansible's dialect of YAML
 Plug 'chase/vim-ansible-yaml'
+
+Plug 'cespare/vim-toml'
 
 " ----------------------
 " Plugins. Color schemes
@@ -210,7 +211,7 @@ au BufWinEnter * silent! loadview
 " ------------------
 " Interface settings
 " ------------------
-set nonumber " Do not show line numbers. Line numbers are always shown in
+" set nonumber " Do not show line numbers. Line numbers are always shown in
              " status line; moreover ':N' command allows quckly navigate
              " into specified line
 scriptencoding utf-8
