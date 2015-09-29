@@ -166,6 +166,10 @@ Plug 'chase/vim-ansible-yaml'
 
 Plug 'cespare/vim-toml'
 
+" Plug 'Matt-Deacalion/vim-systemd-syntax'
+" Plug 'kurayama/systemd-vim-syntax'
+Plug 'darvelo/vim-systemd'
+
 " ----------------------
 " Plugins. Color schemes
 " ----------------------
