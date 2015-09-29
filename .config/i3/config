@@ -163,8 +163,7 @@ bindsym Mod4+Control+l exec i3-msg workspace "10: dev" && i3lock --tiling --dpms
 # Audio shortcuts compatible with PulseAudio 6.x and 4.x
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% || pactl set-sink-volume 0 -- +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% || pactl set-sink-volume 0 -- -5%
-# Mute does not work on Ubuntu's Kernel 3.11.0-15
-bindsym XF86AudioMute exec pactl set-sink-mute 0 $((pactl list sinks | grep -q Mute:.no && echo 1) || echo 0)
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 bindsym XF86AudioPlay exec mpc -q toggle
 bindsym XF86AudioPrev exec mpc -q prev
 bindsym XF86AudioNext exec mpc -q next

@@ -10,6 +10,5 @@
         [".atom/styles.less"],
         [".config/i3/config"],
         [".config/i3status/config"],
-        [".config/mc/ini"],
         [".config/mc/panels.ini"],
     ]
