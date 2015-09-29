@@ -176,6 +176,11 @@ bindsym Ctrl+period exec mpc -q next
 bindsym XF86KbdBrightnessUp exec "file=/sys/class/leds/asus::kbd_backlight/brightness; val=`cat $file`; if [ $val -lt 3 ]; then echo `expr $val + 1` | sudo tee $file; fi"
 bindsym XF86KbdBrightnessDown exec "file=/sys/class/leds/asus::kbd_backlight/brightness; val=`cat $file`; if [ $val -gt 0 ]; then echo `expr $val - 1` | sudo tee $file; fi"
 
+# Display brightness shortcuts
+# It does not work on Arch Linux / Kernel 4.1.8 out of box
+bindsym XF86MonBrightnessUp exec "file=/sys/class/backlight/intel_backlight/brightness; val=$(cat $file); if [ $val -lt 4302 ]; then echo $(expr $val + 100) | sudo tee $file; fi"
+bindsym XF86MonBrightnessDown exec "file=/sys/class/backlight/intel_backlight/brightness; val=$(cat $file); if [ $val -gt 0 ]; then echo $(expr $val - 100) | sudo tee $file; fi"
+
 # TODO display current keyboard layout on i3status or i3bar
 # http://docs.slackware.com/howtos:window_managers:keyboard_layout_in_i3
 
