@@ -315,10 +315,6 @@ if isdirectory(expand("~/.vim/plugged/vim-fugitive/"))
     "nnoremap <silent> <leader>ge :Gedit<CR>
 endif
 
-" TODO consider remove. Use vim-bracketed-paste instead
-" <leader>p toggles auto-indenting for codepaste (i.e. text reformat)
-"set pastetoggle=<leader>p
-
 " ,f NOT WORKING. Original implementation were using Ack instead grep.
     " Fast grep
     " грепает в текущей директории по слову, на котором стоит курсор
