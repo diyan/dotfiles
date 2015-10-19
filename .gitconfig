@@ -1,5 +1,8 @@
 [push]
-	default = simple
+    default = simple
+[diff]
+    tool = vimdiff
 [user]
-	email = alexey.diyan@gmail.com
-	name = Alexey Diyan
+    email = alexey.diyan@gmail.com
+    name = Alexey Diyan
+

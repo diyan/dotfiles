@@ -125,6 +125,11 @@ Plug 'ntpeters/vim-better-whitespace'
 " FIXME Do not forget to call :EditorConfigRelad after each conf change
 Plug 'editorconfig/editorconfig-vim'
 
+"TODO: add comment
+" sudo apt-get install python-autopep8
+" sudo npm -g install js-beautify
+Plug 'Chiel92/vim-autoformat'
+
 Plug 'marijnh/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
 
 Plug 'rollxx/vim-antlr'
