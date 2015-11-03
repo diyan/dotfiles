@@ -256,8 +256,7 @@ exec zim &
 # exec pidgin &
 exec skype --dbpath=~/.config/skype/alexey.diyan &
 exec skype --dbpath=~/.config/skype/dev-pro.alexey.diyan &
-#exec "firefox & kupfer --no-splash &"
-exec "firefox & scudcloud &"
+exec firefox &
 exec --no-startup-id i3-msg 'workspace 2'
 #TODO consider thunar-volman, gnome-volumen-manager, ivman
 # http://urukrama.wordpress.com/openbox-guide/
