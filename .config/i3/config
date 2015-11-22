@@ -19,7 +19,7 @@ set $mod Mod4
 #set $font = exec "mon=`xrandr | grep -E 'connected 1920x1080.*? 282mm x 165mm'`; if [ -n "$mon" ]; then echo 'Ubuntu 16'; else echo 'Ubuntu 16'; fi"
 #font pango:$font
 # TODO check is omitted font size will help on Asus Zenbook
-font pango:Ubuntu 11
+font pango:FontAwesome 12
 #font pango:Ubuntu 14
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -87,29 +87,43 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# workspaces
+# https://fortawesome.github.io/Font-Awesome/cheatsheet/
+# 1 work, 2 web, 3 chat, 4 notes, 5 music, 6 vnc/rdp, 7/8 noname, 9 mail, 10 dev
+set $ws1 " 1  "
+set $ws2 " 2  "
+set $ws3 " 3  "
+set $ws4 " 4  "
+set $ws5 " 5  "
+set $ws6 " 6  "
+set $ws7 " 7 ? "
+set $ws8 " 8 ? "
+set $ws9 " 9  "
+set $ws10 " 10  "
+
 # switch to workspace
-bindsym $mod+1 workspace "1: work"
-bindsym $mod+2 workspace "2: web"
-bindsym $mod+3 workspace "3: chat"
-bindsym $mod+4 workspace "4: notes"
-bindsym $mod+5 workspace "5: music"
-bindsym $mod+6 workspace "6: vnc/rdp"
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace "9: mail"
-bindsym $mod+0 workspace "10: dev"
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace "1: work"
-bindsym $mod+Shift+2 move container to workspace "2: web"
-bindsym $mod+Shift+3 move container to workspace "3: chat"
-bindsym $mod+Shift+4 move container to workspace "4: notes"
-bindsym $mod+Shift+5 move container to workspace "5: music"
-bindsym $mod+Shift+6 move container to workspace "6: vnc/rdp"
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace "9: mail"
-bindsym $mod+Shift+0 move container to workspace "10: dev"
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -198,15 +212,15 @@ workspace "6: vnc/rdp" output HDMI2
 #exec i3-msg 'workspace 1: main; exec wine ~/Dropbox/soft/develop/heidi_sql/heidisql.exe'
 
 # xprop tool can be used to get WM_CLASS, WM_NAME properties
-assign [class="Firefox"] 2: web
-assign [instance="chrome"] 2: web
-assign [instance="skype|scudcloud"] 3: chat
-assign [class="Pidgin"] 3: chat
-assign [instance="zim"] 4: notes
-#assign [class="sublime"] 4: notes
-assign [instance="deadbeef|cantata"] 5: music
-assign [class="jetbrains"] 10: dev
-assign [instance="remmina"] 6: vnc/rdp
+assign [class="Firefox"] $ws2
+assign [instance="chrome"] $ws2
+assign [instance="skype|scudcloud"] $ws3
+assign [class="Pidgin"] $ws3
+assign [instance="zim"] $ws4
+#assign [class="sublime"] $ws4
+assign [instance="deadbeef|cantata"] $ws5
+assign [class="jetbrains"] $ws10
+assign [instance="remmina"] $ws6
 
 # use tiling mode only for main/chat Skype window and floating of all dialogs
 # Skype main window title looks like this - "alexey.diyan - Skype™"
