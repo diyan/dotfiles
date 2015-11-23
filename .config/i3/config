@@ -91,7 +91,7 @@ bindsym $mod+a focus parent
 # https://fortawesome.github.io/Font-Awesome/cheatsheet/
 # 1 work, 2 web, 3 chat, 4 notes, 5 music, 6 vnc/rdp, 7/8 noname, 9 mail, 10 dev
 set $ws1 " 1  "
-set $ws2 " 2  "
+set $ws2 " 2  "
 set $ws3 " 3  "
 set $ws4 " 4  "
 set $ws5 " 5  "
