@@ -25,8 +25,8 @@ order += "time"
 //}
 
 wireless wlp2s0 {
-    format_up = " WLAN %quality"
-    format_down = " WLAN down "
+    format_up = "  %quality"
+    format_down = "  down "
 }
 
 ethernet eth0 {
@@ -36,7 +36,7 @@ ethernet eth0 {
 }
 
 battery 0 {
-    format = " Batt %status %percentage %remaining "
+    format = "  %status %percentage %remaining "
 }
 
 //run_watch DHCP {
@@ -50,16 +50,16 @@ run_watch VPN {
 }
 
 time {
-    format = " %a, %d %b  %H:%M "
+    format = "  %a, %d %b  %H:%M "
 }
 
 cpu_usage {
-    format = " CPU %usage "
+    format = "  %usage "
 }
 
 load {
     //format = " Load %1min %5min %15min "
-    format = " Load %1min "
+    format = "  %1min "
 }
 
 disk "/" {
@@ -67,7 +67,7 @@ disk "/" {
 }
 
 volume master {
-    format = " Vol %volume "
+    format = "  %volume "
     device = "default"
     mixer = "Master"
     mixer_idx = 0
