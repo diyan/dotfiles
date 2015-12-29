@@ -81,6 +81,3 @@ PROMPT='%{$fg[cyan]%}$(prompt_compact_pwd)$(git_prompt_info)$(virtualenv_prompt_
 
 # Qt-based apps must use GTK theme
 export QT_STYLE_OVERRIDE=gtk
-
-# gvm is a Golang version manager
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
