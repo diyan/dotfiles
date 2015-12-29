@@ -101,6 +101,13 @@ set $ws8 " 8 ? "
 set $ws9 " 9  "
 set $ws10 " 10  "
 
+workspace $ws1 output HDMI1
+workspace $ws2 output HDMI1
+workspace $ws3 output HDMI1
+workspace $ws4 output HDMI2
+workspace $ws5 output HDMI2
+workspace $ws6 output HDMI2
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -200,13 +207,6 @@ bindsym XF86MonBrightnessDown exec "file=/sys/class/backlight/intel_backlight/br
 
 # TODO investigate how-to setup launcher for i3
 # wine ~/Dropbox/soft/develop/heidi_sql/heidisql.exe
-
-workspace "1: work" output HDMI1
-workspace "2: web" output HDMI1
-workspace "3: chat" output HDMI1
-workspace "4: notes" output HDMI2
-workspace "5: music" output HDMI2
-workspace "6: vnc/rdp" output HDMI2
 
 # TODO i3 created additonal useless container. We should avoid this behavior
 #exec i3-msg 'workspace 1: main; exec wine ~/Dropbox/soft/develop/heidi_sql/heidisql.exe'
