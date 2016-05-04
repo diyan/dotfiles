@@ -21,7 +21,8 @@ fi
 # Default apps
 export EDITOR=vim
 export VIEWER='vim -R'
-export BROWSER=firefox
+# TODO set terminal BROWSER if no X is present
+#export BROWSER=google-chrome-stable
 
 # gvm is a Golang version manager
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
