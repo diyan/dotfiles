@@ -1,0 +1,17 @@
+# ~/.xprofile that works at Ubuntu 15.10 / LightDM and Arch Linux / startx
+#
+# NOTEs:
+#  - Most DMs do source ~/.xprofile before calling xinit
+#  - LightDM, GDM does not source ~/.xession file
+
+export QT_STYLE_OVERRIDE=gtk
+export BROWSER=google-chrome-stable
+
+# Override i3-sensible-terminal
+#export TERMINAL=konsole
+
+# TODO Do different calls for Workstation, Asus UX31A and MacBook 13" Retina
+# Setup displays, so i3bar will be displayed in a proper way
+xrandr --output HDMI1 --mode 1920x1200 --primary --left-of HDMI2
+
+# vim:ft=sh:

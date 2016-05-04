@@ -3,6 +3,7 @@
         [".vimrc"],
         [".zshrc"],
 	[".gitconfig"],
+	[".xprofile"],
 	[".local/bin/rofi_run"],
 	[".local/bin/skype_at_home"],
 	[".local/bin/skype_at_devpro"],
