@@ -78,6 +78,3 @@ ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[blue]%}git%{$reset_color%}:%{$fg[green]%}"
 ZSH_THEME_VIRTUALENV_PREFIX=" %{$fg[blue]%}pyenv%{$reset_color%}:%{$fg[green]%}"
 ZSH_THEME_VIRTUALENV_SUFFIX="\0"
 PROMPT='%{$fg[cyan]%}$(prompt_compact_pwd)$(git_prompt_info)$(virtualenv_prompt_info) %(!.%{$fg_bold[red]%}#.%{$fg_bold[yellow]%}$)%{$reset_color%} '
-
-# Qt-based apps must use GTK theme
-export QT_STYLE_OVERRIDE=gtk
