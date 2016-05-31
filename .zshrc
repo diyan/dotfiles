@@ -4,9 +4,6 @@
 
 # Run `zgen update` to apply changes made in this file
 
-# Disable auto update for oh-my-zsh plugin manager
-DISABLE_AUTO_UPDATE=true
-
 # load zgen
 source "${HOME}/.zgen/zgen.zsh"
 
@@ -18,6 +15,7 @@ if ! zgen saved; then
     # Oh My ZSH Plugins
     zgen oh-my-zsh plugins/virtualenv
     zgen oh-my-zsh plugins/command-not-found
+    zgen oh-my-zsh plugins/colored-man-pages
     # TODO evaluate oh-my-zsh plugins: sudo, fasd, taskwarrior, tmux,
     #   rsync, archlinux, mosh, history, pip, python, systemd, brew,
     #   docker,
@@ -31,16 +29,16 @@ if ! zgen saved; then
     # https://github.com/rummik/dotfiles/blob/master/.zshrc
     # https://github.com/sharat87/lawn/blob/master/shell/zsh
 
+    # Set 256 color terminal mode if available
+    zgen load chrissicool/zsh-256color
     # More consistent Git aliases than Oh My ZSH provides
     zgen load sorin-ionescu/prezto modules/git/alias.zsh
     # Colorful directory listing with git features
     zgen load supercrabtree/k
     # FIXME do not show notifications for active terminals
     # zgen load marzocchi/zsh-notify
-
-    # ERROR Cannot rebind self-insert: user:url-quote-magic
-    #zgen load hchbaw/auto-fu.zsh
-
+    # Preview completion for words and list-choices as you type
+##    zgen load hchbaw/auto-fu.zsh
     # Show tip if command has alias
     zgen load djui/alias-tips
     # Additional completions that are not yet in Zsh
@@ -53,8 +51,10 @@ if ! zgen saved; then
     # - works only if `zgen oh-my-zsh` is defined
     # - load only after zsh-syntax-highlighting, zsh-history-substring-search
     zgen load zsh-users/zsh-autosuggestions
-
-    # Sorin theme
+    # Disable auto update for oh-my-zsh, let zgen to update everything
+    zgen load unixorn/autoupdate-zgen
+    DISABLE_AUTO_UPDATE=true
+    # Use Sorin theme from oh-my-zsh
     zgen oh-my-zsh themes/sorin
 
     # save all to init script
@@ -67,7 +67,10 @@ function prompt_compact_pwd {
     sed "s:\([^/]\)[^/]*/:\1/:g" <<< "${PWD/#$HOME/~}"
 }
 
-TERM=xterm-256color # enable 256 colors for vim, zsh-autosuggestions
+# Enable hchbaw/auto-fu completion
+##zle-line-init () {auto-fu-init;}; zle -N zle-line-init
+
+#TERM=xterm-256color # enable 256 colors for vim, zsh-autosuggestions
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[blue]%}git%{$reset_color%}:%{$fg[green]%}"
 ZSH_THEME_VIRTUALENV_PREFIX=" %{$fg[blue]%}pyenv%{$reset_color%}:%{$fg[green]%}"
 ZSH_THEME_VIRTUALENV_SUFFIX="\0"
