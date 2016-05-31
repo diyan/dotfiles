@@ -1,9 +1,14 @@
 # 1. Install zgen:
-# $ git clone https://github.com/tarjoilija/zgen.git ~/.zgen/zgen
+# $ git clone https://github.com/tarjoilija/zgen.git .zgen
 # 2. Save this file into ~/.zshrc
 
+# Run `zgen update` to apply changes made in this file
+
+# Disable auto update for oh-my-zsh plugin manager
+DISABLE_AUTO_UPDATE=true
+
 # load zgen
-source "${HOME}/.zgen/zgen/zgen.zsh"
+source "${HOME}/.zgen/zgen.zsh"
 
 if ! zgen saved; then
     echo "zgen init script not found. save all scripts into init script"
@@ -11,11 +16,9 @@ if ! zgen saved; then
     zgen oh-my-zsh
 
     # Oh My ZSH Plugins
-    # TODO switch into prezto git plugin
-    #zgen oh-my-zsh plugins/git
     zgen oh-my-zsh plugins/virtualenv
     zgen oh-my-zsh plugins/command-not-found
-    # TODO evaluate oh-my-zsh plugins: git, sudo, fasd, taskwarrior, tmux,
+    # TODO evaluate oh-my-zsh plugins: sudo, fasd, taskwarrior, tmux,
     #   rsync, archlinux, mosh, history, pip, python, systemd, brew,
     #   docker,
     # TODO evaluate Tarrasch/zsh-bd, Tarrasch/zsh-colors, tarruda/zsh-autosuggestions
@@ -28,35 +31,28 @@ if ! zgen saved; then
     # https://github.com/rummik/dotfiles/blob/master/.zshrc
     # https://github.com/sharat87/lawn/blob/master/shell/zsh
 
-    # Prezto has more consistent Git aliases than Oh My ZSH
+    # More consistent Git aliases than Oh My ZSH provides
     zgen load sorin-ionescu/prezto modules/git/alias.zsh
-    zgen load walesmd/caniuse.plugin.zsh
+    # Colorful directory listing with git features
     zgen load supercrabtree/k
-
     # FIXME do not show notifications for active terminals
     # zgen load marzocchi/zsh-notify
 
     # ERROR Cannot rebind self-insert: user:url-quote-magic
     #zgen load hchbaw/auto-fu.zsh
 
-    zgen load zsh-users/zsh-completions src
-
-    # Note zsh-syntax-highlighting and only then zsh-history-substring-search
-    #zgen load zsh-users/zsh-syntax-highlighting
-    #zgen load zsh-users/zsh-history-substring-search
-    # TODO double check order: zsh-syntax-highlighting then zsh-autosuggestions
-    # FIXME zsh-autosuggestions breaks zsh-syntax-highlighting a bit
-    zgen load tarruda/zsh-autosuggestions
-
-    # Enable autosuggestions automatically
-    zle-line-init() {
-        zle autosuggest-start
-    }
-    zle -N zle-line-init
-
-    # use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
-    # zsh-autosuggestions is designed to be unobtrusive)
-    bindkey '^T' autosuggest-toggle
+    # Show tip if command has alias
+    zgen load djui/alias-tips
+    # Additional completions that are not yet in Zsh
+    # TODO double check that plugin works
+    zgen load zsh-users/zsh-completions
+    # Fish-like syntax highlighting
+    zgen load zsh-users/zsh-syntax-highlighting
+    # zgen load zsh-users/zsh-history-substring-search
+    # Fish-like autosuggestions, check caveats below:
+    # - works only if `zgen oh-my-zsh` is defined
+    # - load only after zsh-syntax-highlighting, zsh-history-substring-search
+    zgen load zsh-users/zsh-autosuggestions
 
     # Sorin theme
     zgen oh-my-zsh themes/sorin
@@ -65,15 +61,13 @@ if ! zgen saved; then
     zgen save
 fi
 
-# Customize Sorin theme
+# Custom prompt for Sorin theme
 function prompt_compact_pwd {
     # http://unix.stackexchange.com/a/26885
     sed "s:\([^/]\)[^/]*/:\1/:g" <<< "${PWD/#$HOME/~}"
 }
 
 TERM=xterm-256color # enable 256 colors for vim, zsh-autosuggestions
-# I'm using underscore cursor, so highlight word after cursor
-AUTOSUGGESTION_HIGHLIGHT_CURSOR=0
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[blue]%}git%{$reset_color%}:%{$fg[green]%}"
 ZSH_THEME_VIRTUALENV_PREFIX=" %{$fg[blue]%}pyenv%{$reset_color%}:%{$fg[green]%}"
 ZSH_THEME_VIRTUALENV_SUFFIX="\0"
